@@ -8,88 +8,100 @@
 <a name="top"></a>
 <div id="top_link"><a href="./index.html">Topへ</a></div>
 <div id="container">
-<div id="title-banner"><h1>吉里吉里Zでの吉里吉里2からの変更点一覧</h1></div>
+<div id="title-banner"><h1>吉里吉里Z中吉里吉里2的变更点一览</h1></div>
 
 <div class="content">
 <p>
-以下の変更点は初期正式版についてのものです。<br />
-それ以降のバージョンによってさらに変更が加えられている可能性があります。<br />
-1.0 以降の更新内容については、<a href="./olderversions.html">更新履歴</a>を参照してください。<br />
+以下更改是关于初始正式版本的。<br />
+后续版本可能对此进行了进一步的更改。<br />
+有关1.0 或更高版本的更新，请参见<a href="./olderversions.html">更新履历</a>。<br />
 </p>
 <br />
-<div class="title_bar"><a name="update">変更</a></div>
+<div class="title_bar"><a name="update">变更</a></div>
 <ol>
-	<li>Visual Studio でビルドできるように変更。</li>
+	<li>	已更改为可在Visual Studio中构建。</li>
 	<p>
-		C++Builder5 でビルドしてた吉里吉里2 を Visual C++ 2012 でビルドできるように各種変更を行った。<br />
+		为了能在Visual C++2012中构建用C++Builder5构建的吉里吉里2，进行了各种更改。<br />
 	</p>
 
-	<li>VCL 依存部分を Win32 API 呼び出し処理へ変更。</li>
+	<li>VCL依赖部分已更改为Win32 API调用处理。</li>
 	<p>
-		VC では、VCL を利用できないため、通常の Win32 API を使用する処理へ変更。<br />
-		ある程度等価な処理となっているが、同じ実装ではないため細部の動作は異なる部分がある。<br />
-		VCL では、不可視のメインウィンドウがアプリケーション(ウィンドウ)として機能し、他のウィンドウはその子として動く。<br />
-		吉里吉里2 内では、最初に作られたウィンドウがメインウィンドウとして扱われるが、内部には不可視のアプリケーション(ウィンドウ)が存在している(た)。<br />
-		吉里吉里Z では、VCL を書き換えると共に、この不可視のアプリケーション(ウィンドウ)は存在しなくなっている。<br />
-		このためアプリケーションの挙動で細部が異なる箇所が存在する。<br />
-		アプリケーションとして扱われるもののうちいくつかは最初に作られた吉里吉里内のメインウィンドウが相当する。<br />
-		アプリケーションのイベントでアクティブ/非アクティブはメインウィンドウのものとなる。<br />
+		在VC中，由于无法使用VCL，因此更改为使用常规的Win32 API处理。<br />
+		虽然在某种程度上是等价的处理，但由于不是相同的实现，所以细节的动作有不同的部分。<br />
+		在VCL中，不可见的主窗口作为应用程序（窗口）运行，其他窗口作为其子窗口运行。<br />
+		在吉里吉里2内，第一个创建的窗口被视为主窗口，但内部存在不可见的应用程序（窗口）。<br />
+		在吉里吉里Z中，随着VCL的重写，这个不可见的应用程序（窗口）已经不存在。<br />
+		因此，在应用程序的行为中存在细节不同的地方。<br />
+		作为应用程序处理的东西中有几个相当于最初生成的吉里吉里内的主窗口。<br />
+		应用程序中的活动/非活动事件与主窗口相同。<br />
 	</p>
 
-	<li>Direct3D7 を Direct3D9 へ変更。</li>
+	<li>已将Direct3D7 更改为 Direct3D9 。</li>
 	<p>
-		Direct3D7 によって描画されていたものは Direct3D9 へ書き換えられている。<br />
-		それに伴い次の変更が行われている。<br />
+		由Direct3D7 绘制的内容被更改为 Direct3D9 。<br />
+		随之进行了以下变更。<br />
 	</p>
 
-	<li>フルスクリーン化処理を DrawDevice で行うように変更。</li>
+	<li>已将全屏操作更改为在DrawDevice中执行。</li>
 	<p>
-		DirectDraw によるフルスクリーン化は、Windows8 でいくつか問題を引き起こしていたようなので、この部分は変更する必要があり、Direct3D9 では Direct3D Device がフルスクリーン化を担当するということもあり、フルスクリーン化処理は DrawDevice 側で処理する実装とした。<br />
-		上述のように Direct3D9 化に伴い、フルスクリーン化は API/DirectDraw から API/Direct3D9 へと変更になり、設定はオプションではなく DrawDevice 依存となった。<br />
+		基于DirectDraw的全屏化，似乎在Windows8中引起了一些问题，所以这部分需要进行变更，Direct3D9中Direct3D Device负责全屏化，因此全屏化处理采用了DrawDevice端处理的实现。<br />
+		如上所述，随着Direct3D9化，全屏化从API/DirectDraw变为API/Direct3D9，依赖的并非是选项而是DrawDevice。<br />
 	</p>
 
-	<li>KAGParser クラスをプラグインに変更。</li>
+	<li>将KAGParser类更改为插件。</li>
 	<p>
-		元々プラグインの方が良いと思えるクラスだったので、プラグインに移動した。<br />
-		このプラグインは互換性のために作成した。<br />
+		原来觉得作为插件比较好的类，所以转到插件。<br />
+		此插件是为了兼容性而创建的。<br />
 	</p>
 
-	<li>Menu クラスをプラグインに変更。</li>
+	<li>将Menu 类更改为插件。</li>
 	<p>
-		Menu を非推奨とするにあたり、プラグインに移動した。<br />
-		今後メニューを使わない実装にすることを推奨。<br />
+		已将Menu移到插件，不建议使用。<br />
+		建议今后使用无菜单的程序。<br />
 	</p>
 
-	<li>各種依存ライブラリを更新。</li>
+	<li>更新各种依赖库。</li>
 	<p>
-		VCプロジェクト作成時に最新バージョンに更新した。<br />
+		创建VC项目时更新到最新版本。<br />
 	</p>
 
-	<li> 正規表現エンジンを鬼車へ変更。</li>
+	<li> 正则表达式引擎改为鬼车。</li>
 	<p>
-		boost の少し古いバージョンのものであったので、鬼車へと変更した。<br />
+		因为是boost较早版本的东西，所以改成了鬼车。<br />
+	</p>
+	
+	<li> 将向控制台的输出变更为向命令行的输出，调试时也输出到debug输出。</li>
+	<p>
+		随着控制台的删除，改为输出到命令行。<br />
+		调试时，能看到debug输出调试会更容易，因此debug构建中也输出到debug输出。<br />
+	</p>
+	<li>Font 变为可以构造了。</li>
+	<p>
+		虽然只作为Layer.font存在，但可以独立生成。<br />
 	</p>
 
-	<li> コンソールへの出力をコマンドラインへの出力へ変更、デバッグ時はデバッグ出力へも出力。</li>
+	<li>工具提示处理的标准变更。</li>
 	<p>
-		コンソール削除に伴いコマンドラインへ出力するように変更した。<br />
-		デバッグ時は、デバッグ出力で見られた方がデバッグしやすいため、デバッグビルドではデバッグ出力へも出力するようにした。<br />
-	</p>
-
-	<li>Font クラスを生成できるように変更。</li>
-	<p>
-		Layer.font としてのみ存在していたが、独立して生成できるようにした。<br />
-	</p>
-
-	<li>ツールチップ処理の仕様変更。</li>
-	<p>
-		VCL のツールチップは、コモンコントロールのツールチップではなく独自実装と言うことで、コモンコントロールに置き換えるか、同じように実装するか検討し、イベントを発生させて Layer として描画可能な形に変更した。<br />
+		<!-- VCL のツールチップは、コモンコントロールのツールチップではなく独自実装と言うことで、コモンコントロールに置き換えるか、同じように実装するか検討し、イベントを発生させて Layer として描画可能な形に変更した。<br />
 		Layer.hint を設定し、カーソルが一定時間停止しヒント表示タイミングになると <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_onHintChanged.html">Window.onHintChanged</a> イベントが発生する。<br />
 		カーソル停止時間は、<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_hintDelay.html">Window.hintDelay</a> で指定可能。<br />
 		ヒントを描画するレイヤーには <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_ignoreHintSensing.html">Layer.ignoreHintSensing</a> を有効にして、ヒント表示を無視させる。<br />
 		これで onHintChanged で isshow が true の時、ヒントを最前面レイヤーに描画し、ヒントレイヤーはマウスメッセージは無視されるように設定すれば従来と同じような表示が出来る。<br />
 		isshow が false でイベントが来たら非表示にする。<br />
-		<a href="https://github.com/jin1016/krkrz/blob/master/script/Sample/tooltip/startup.tjs">GitHub にサンプル</a>を上げている。<br />
+		<a href="https://github.com/jin1016/krkrz/blob/master/script/Sample/tooltip/startup.tjs">GitHub にサンプル</a>を上げている。<br /> -->
+
+对于要绘制提示的层，启用层ignoreHintSensing以忽略提示显示。
+这样，在onHintChanged中isshow为true时，将提示描绘在最前面层，如果将提示层设定为忽略鼠标消息，则能够进行与以往相同的显示。
+isshow是false，事件来了就隐藏。
+给GitHub样品。
+
+		VCL的工具提示不是公共控件的工具提示，而是各自实现，所以考虑是替换为公共控件，还是以同样的方式实现，发生事件后变更为可以作为Layer绘制的形式。<br />
+		设置Layer.hint，当光标停止一定时间并到达提示显示定时时，发生<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_onHintChanged.html">Window.onHintChanged</a> 事件。<br />
+		光标停止时间可在<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_hintDelay.html">Window.hintDelay</a> 中指定。<br />
+		ヒントを描画するレイヤーには <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_ignoreHintSensing.html">Layer.ignoreHintSensing</a> を有効にして、ヒント表示を無視させる。<br />
+		これで onHintChanged で isshow が true の時、ヒントを最前面レイヤーに描画し、ヒントレイヤーはマウスメッセージは無視されるように設定すれば従来と同じような表示が出来る。<br />
+		isshow が false でイベントが来たら非表示にする。<br />
+		这是<a href="https://github.com/jin1016/krkrz/blob/master/script/Sample/tooltip/startup.tjs">GitHub 样例</a>。<br />
 	</p>
 
 	<li>ゲームパッドの有効/無効をデバッグオプション化。</li>
@@ -234,7 +246,7 @@
 </ol>
 
 
-<div class="title_bar"><a name="delete">削除</a></div>
+<div class="title_bar"><a name="delete">删除</a></div>
 <ol>
 	<li>コンソール削除</li>
 	<p>
@@ -304,7 +316,7 @@
 </ol>
 
 
-<div class="title_bar"><a name="added">追加</a></div>
+<div class="title_bar"><a name="added">增加</a></div>
 <ol>
 	<li>マルチタッチ機能のサポート。</li>
 	<p>

@@ -204,7 +204,7 @@
 <dt><code class="inlinecode"><a id="id151" name="id151" class="targanchor"><dfn>invalidate</dfn></a> 运算符</code></dt>
 <dd><code class="inlinecode">invalidate</code> 运算符会将右侧表达式的结果对象无效化。右侧指定为 void, 字符串, 数字, 字节串 则不进行操作。对象已经无效化也不进行操作。指定为null则会发生异常。</dd>
 <dt><code class="inlinecode"><a id="id152" name="id152" class="targanchor"><dfn>isvalid</dfn></a> 运算符</code></dt>
-<dd><code class="inlinecode">isvalid</code> 运算符会先对右侧或者左侧的的表达式求值，如果得到的结果的对象是有效的，则该运算符的结果为真，如果是无效的，则该运算符的结果为假。该运算符放到操作数的前面或后面具有相同的效果。对象指定为 void, 字符串, 数字, 字节串 则 。対象が void, 文字列, 数値, オクテット列だった場合は常に真を返します。指定为null则会发生异常。</dd>
+<dd><code class="inlinecode">isvalid</code> 运算符会先对右侧或者左侧的的表达式求值，如果得到的结果的对象是有效的，则该运算符的结果为真，如果是无效的，则该运算符的结果为假。该运算符放到操作数的前面或后面具有相同的效果。对象指定为 void, 字符串, 数字, 字节串 则始终返回真值。指定为null则会发生异常。</dd>
 <dt><code class="inlinecode"><a id="id153" name="id153" class="targanchor"><dfn>delete</dfn></a> 运算符</code></dt>
 <dd><code class="inlinecode">delete</code> 运算符会将写在右侧的对象的成员或者全局变量删除。删除成功则返回 true、失败则返回 false 。(译者注：该运算符在删除对象成员或全局变量时，不会把对象成员或全局变量所指向的对象也删除掉。如果环境中还存在其他对那个对象的引用则那个对象将被保留。)</dd>
 <dt><code class="inlinecode"><a id="id154" name="id154" class="targanchor"><dfn>typeof</dfn></a> 运算符</code></dt>

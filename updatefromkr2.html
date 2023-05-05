@@ -89,139 +89,183 @@
 		これで onHintChanged で isshow が true の時、ヒントを最前面レイヤーに描画し、ヒントレイヤーはマウスメッセージは無視されるように設定すれば従来と同じような表示が出来る。<br />
 		isshow が false でイベントが来たら非表示にする。<br />
 		<a href="https://github.com/jin1016/krkrz/blob/master/script/Sample/tooltip/startup.tjs">GitHub にサンプル</a>を上げている。<br /> -->
-
-对于要绘制提示的层，启用层ignoreHintSensing以忽略提示显示。
-这样，在onHintChanged中isshow为true时，将提示描绘在最前面层，如果将提示层设定为忽略鼠标消息，则能够进行与以往相同的显示。
-isshow是false，事件来了就隐藏。
-给GitHub样品。
-
 		VCL的工具提示不是公共控件的工具提示，而是各自实现，所以考虑是替换为公共控件，还是以同样的方式实现，发生事件后变更为可以作为Layer绘制的形式。<br />
 		设置Layer.hint，当光标停止一定时间并到达提示显示定时时，发生<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_onHintChanged.html">Window.onHintChanged</a> 事件。<br />
 		光标停止时间可在<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_hintDelay.html">Window.hintDelay</a> 中指定。<br />
-		ヒントを描画するレイヤーには <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_ignoreHintSensing.html">Layer.ignoreHintSensing</a> を有効にして、ヒント表示を無視させる。<br />
-		これで onHintChanged で isshow が true の時、ヒントを最前面レイヤーに描画し、ヒントレイヤーはマウスメッセージは無視されるように設定すれば従来と同じような表示が出来る。<br />
-		isshow が false でイベントが来たら非表示にする。<br />
+		对绘制提示的层，启用 <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_ignoreHintSensing.html">Layer.ignoreHintSensing</a> 以忽略提示显示。<br />
+		这样，在 onHintChanged 中 isshow 为 true时，将提示绘制在最前面层，如果将提示层设定为忽略鼠标消息，则能够进行与以往相同的方式显示。  の時、ヒントを最前面レイヤーに描画し、ヒントレイヤーはマウスメッセージは無視されるように設定すれば従来と同じような表示が出来る。<br />
+		isshow 为 false 时发生事件时就隐藏显示。<br />
 		这是<a href="https://github.com/jin1016/krkrz/blob/master/script/Sample/tooltip/startup.tjs">GitHub 样例</a>。<br />
 	</p>
 
-	<li>ゲームパッドの有効/無効をデバッグオプション化。</li>
+	<li>已将“启用/禁用手柄”设置为命令行选项。</li>
 	<p>
-		組み込みのゲームパッドサポートはない方が良い場合もあるので、オプションのみでなくコンパイルオプションで無効化してしまえるようにした。<br />
-		DISABLE_EMBEDDED_GAME_PAD を指定すると無効化される。<br />
+		<!-- 組み込みのゲームパッドサポートはない方が良い場合もあるので、オプションのみでなくコンパイルオプションで無効化してしまえるようにした。<br />
+		DISABLE_EMBEDDED_GAME_PAD を指定すると無効化される。<br /> -->
+		由于也有没有加入的手柄支持比较好的情况，所以不仅是选项，用编译选项也可以使其无效化。<br />
+		指定DISABLE_EMBEDDED_GAME_PAD以禁用。<br />
 	</p>
-
-	<li>JPEG デコード時 LLM を使用するのを標準に。</li>
+	
+	
+	<li>将JPEG解码时使用LLM转换设为默认值。</li>
 	<p>
-		吉里吉里2 では、品質が標準の時 AAN が使われていたが、AAN だと低品質なので LLM を標準とした。<br />
+		<!-- 吉里吉里2 では、品質が標準の時 AAN が使われていたが、AAN だと低品質なので LLM を標準とした。<br />
 		吉里吉里Z では JPEG の読込みは吉里吉里2 よりもかなり高速化しており、IDCT のアルゴリズムを AAN から LLM へ変更しても吉里吉里2 より高速にデコードされる。<br />
-		LLM の方が一般的に使われているはずなので、吉里吉里で表示すると汚いと言う状況は少なくなると考えられる。<br />
+		LLM の方が一般的に使われているはずなので、吉里吉里で表示すると汚いと言う状況は少なくなると考えられる。<br /> -->
+	吉里吉里2中，标准画质的时候使用AAN，但是AAN质量较低，所以以LLM为标准。<br />
+	吉里吉里Z中JPEG的读取速度比吉里吉里2快很多，即使将IDCT的算法从AAN变更为LLM，也会比吉里吉里2更快地解码。<br />
+	因为LLM通常更常用，因此在吉里吉里中显示时出现模糊的情况会减少。<br />
 	</p>
 
-	<li>TJS2 スクリプトのデフォルト文字コードを UTF-8 に変更。</li>
+	<li>已将TJS2脚本的默认字符编码更改为UTF-8。</li>
 	<p>
-		UTF-8 の方が一般化していると言うことで、Shift-JIS から変更。<br />
+		<!-- UTF-8 の方が一般化していると言うことで、Shift-JIS から変更。<br />
 		TVP_TEXT_READ_ANSI_MBCS を付けてコンパイルすれば従来通り Shift-JIS をデフォルトとする。<br />
 		Plugin用公開関数の TVPCreateTextStreamForReadByEncoding の第3引数にエンコーディング指定可能。<br />
 		"Shift_JIS" か "UTF-8" のどちらかを指定する。<br />
 		また、オプションの"-readencoding"で"Shift_JIS" か "UTF-8" のどちらかを指定することでデフォルトを変更できる。<br />
 		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Scripts_textEncoding.html">Scripts.textEncoding</a> で "Shift_JIS" か "UTF-8" のどちらかの指定も可能。<br />
 		プラグインの KAGParser もこの設定に従う。<br />
-		プラグインで TVPCreateTextStreamForReadByEncoding を呼び出している箇所を変更すれば、任意のエンコーディングで読み込む。<br />
+		プラグインで TVPCreateTextStreamForReadByEncoding を呼び出している箇所を変更すれば、任意のエンコーディングで読み込む。<br /> -->
+因为UTF-8更通用，所以改变了默认的Shift-JIS。<br />
+如果附上TVP_TEXT_READ_ANSI_MBCS进行编译，则与过去一样，Shift-JIS为默认值。<br />
+Plugin公有函数的TVPCreateTextStreamForReadByEncoding的第三个参数可以指定编码。<br />
+指定“Shift_JIS”或“UTF-8”。<br />
+此外，可以通过在选项“-readencoding”中指定“Shift_JIS”或“UTF-8”来更改默认值。<br />
+您可以在<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Scripts_textEncoding.html">Scripts.textEncoding</a> 中指定“Shift_JIS”或“UTF-8”。<br />
+插件KAGParser也遵循此设置。<br />
+如果插件更改调用TVPCreateTextStreamForReadByEncoding的位置，则可以以任意编码读取。<br />
 	</p>
 
-	<li>ソースコード埋め込み文字列をリソースへ移動。</li>
+	<li>将嵌入源码字符串移动到资源。</li>
 	<p>
-		エラーメッセージ等直接ソースコードに記述されていた文字列をリソースへ移動し、日本語と英語で分離。<br />
+		<!-- エラーメッセージ等直接ソースコードに記述されていた文字列をリソースへ移動し、日本語と英語で分離。<br />
 		メッセージからリソースやソースコードはスクリプトで自動生成するようにしたので、他環境実装時持っていきやすくなっている。<br />
 		Messages.xlsx に記述し、gentext.bat で生成される。<br />
-		ライセンス文はリソースの license.txt に記述されている。<br />
+		ライセンス文はリソースの license.txt に記述されている。<br /> -->
+		将直接在源代码中描述的字符串（如错误消息）移动到资源中，并以日语和英语分离。<br />
+		由于消息、资源和源码是通过脚本自动生成的，因此在其他环境中实现时更容易进行迁移。<br />
+		记录在Messages.xlsx中，在gentext.bat中生成。<br />
+		许可证描述在资源的license.txt中。<br />
 	</p>
 
-	<li>コンパイル後バイナリに結合していたオプションをリソースに移動。</li>
+	<li>将编译后绑定到二进制文件的选项移动到资源。</li>
 	<p>
-		従来 tvpwin32.exe に optionarea.bin を末尾に結合し、krkr.eXe として、実行時末尾のバイナリを読み取っていたものをリソースに埋め込む形に変更。<br />
+		<!-- 従来 tvpwin32.exe に optionarea.bin を末尾に結合し、krkr.eXe として、実行時末尾のバイナリを読み取っていたものをリソースに埋め込む形に変更。<br />
 		オプションは optionarea.txt に改行区切りで記述する。<br />
-		一般的な構造となったためウィルス駆除ソフト等で誤検出が減ることが期待できる。<br />
+		一般的な構造となったためウィルス駆除ソフト等で誤検出が減ることが期待できる。<br /> -->
+		将以往tvpwin32.exe中optionarea.bin结合到末尾，变更为krkr.eXe将运行时读取的末尾的二进制文件嵌入到资源中的形式。<br />
+		选项在optionarea.txt中用换行分隔来记录。<br />
+		因为是常见的构造，所以可以期待通过杀毒软件等减少误检测。<br />
 	</p>
 
-	<li>マルチディスプレイ対応に伴いスクリーンサイズ等が返す値を変更。</li>
+	<li>随着多显示器的应对，改变屏幕尺寸等返回的值。</li>
 	<p>
-		従来プライマリーディスプレイの値を常に返すようになっていたが、複数のディスプレイを考慮した値を返すように変更。<br />
+		<!-- 従来プライマリーディスプレイの値を常に返すようになっていたが、複数のディスプレイを考慮した値を返すように変更。<br />
 		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_screenWidth.html">System.screenWidth</a> / 
 		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_screenHeight.html">screenHeight</a> は、メインウィンドウがあるモニタのサイズを返す。メインウィンドウが作られる前はプライマリモニタのサイズで返す。<br />
 		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopLeft.html">System.desktopLeft</a> / 
 		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopTop.html">desktopTop</a> / 
 		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopWidth.html">desktopWidth</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopHeight.html">desktopHeight</a> は、メインウィンドウがあるモニタの作業領域を返す。メインウィンドウがない時は、プライマリモニタの作業領域を返す。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopHeight.html">desktopHeight</a> は、メインウィンドウがあるモニタの作業領域を返す。メインウィンドウがない時は、プライマリモニタの作業領域を返す。<br /> -->
+		以前总是返回主显示器的值，现在改为返回考虑了多个显示器的值。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_screenWidth.html">System.screenWidth</a> / 
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_screenHeight.html">screenHeight</a> 返回主窗口所在的显示器的大小。在主窗口创建之前按主显示器的大小返回。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopLeft.html">System.desktopLeft</a> / 
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopTop.html">desktopTop</a> / 
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopWidth.html">desktopWidth</a> / 
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopHeight.html">desktopHeight</a> 返回主窗口所在显示器的工作区。如果没有主窗口，则返回主显示器的工作区。<br />
 	</p>
 
 
-	<li>フォント選択ダイアログをスクリプト化。</li>
+	<li>字体选择器脚本化。</li>
 	<p>
-		本体から削除し win32dialog.dll + スクリプトによる実装に変更。<br />
-		スクリプトは <a href="https://github.com/krkrz/krkrz/tree/master/script/Krkr2Compat">GitHub</a> にある。<br />
+	<!-- 	本体から削除し win32dialog.dll + スクリプトによる実装に変更。<br />
+		スクリプトは <a href="https://github.com/krkrz/krkrz/tree/master/script/Krkr2Compat">GitHub</a> にある。<br /> -->
+		从主体中删除，改为win32dialog.dll + 脚本实现。<br />
+		脚本位于 <a href="https://github.com/krkrz/krkrz/tree/master/script/Krkr2Compat">GitHub</a> 中。<br />
 
 	</p>
 
-	<li>文字入力ダイアログをスクリプト化。</li>
+	<li>字符输入对话框脚本化。</li>
 	<p>
-		本体から削除し win32dialog.dll + スクリプトによる実装に変更。<br />
-		スクリプトは <a href="https://github.com/krkrz/krkrz/tree/master/script/Krkr2Compat">GitHub</a> にある。<br />
+		<!-- 本体から削除し win32dialog.dll + スクリプトによる実装に変更。<br />
+		スクリプトは <a href="https://github.com/krkrz/krkrz/tree/master/script/Krkr2Compat">GitHub</a> にある。<br /> -->
+		从主体中删除，改为win32dialog.dll+脚本实现。<br />
+		脚本位于 <a href="https://github.com/krkrz/krkrz/tree/master/script/Krkr2Compat">GitHub</a> 中。<br />
 	</p>
 
 
-	<li>起動時ファイル選択ダイアログをフォルダ選択ダイアログへ変更。</li>
+	<li>将启动文件选择器更改为文件夹选择器。。</li>
 	<p>
-		VCL を使った独自のダイアログだったものを、フォルダ選択ダイアログへ変更した。<br />
+		<!-- VCL を使った独自のダイアログだったものを、フォルダ選択ダイアログへ変更した。<br /> -->
+		将使用VCL的独有对话框更改为文件夹选择对话框。<br />
 	</p>
 
-	<li>起動時ファイル選択をデバッグオプションで無効化可能に変更。</li>
+	<li>在调试选项中将启动文件选择更改为可禁用。</li>
 	<p>
-		最終リリース版ではない方がよい機能なので、無効化可能にした。<br />
-		TVP_DISABLE_SELECT_XP3_OR_FOLDER を定義することで無効化する。<br />
+		<!-- 最終リリース版ではない方がよい機能なので、無効化可能にした。<br />
+		TVP_DISABLE_SELECT_XP3_OR_FOLDER を定義することで無効化する。<br /> -->
+	
+		不希望此功能在最终发行版中使用，因此改为可禁用。<br />
+		通过定义TVP_DISABLE_SELECT_XP3_OR_FOLDER将其禁用。<br />
 	</p>
 
-	<li>マルチバイトコードからワイド(UNICODE)バイトコードへ変更。</li>
+	<li>多字节码更改为宽(UNICODE)字节码。</li>
 	<p>
-		NT 系のみサポートとするので、ワイド(UNICODE)バイトコードに変更した。<br />
+		<!-- NT 系のみサポートとするので、ワイド(UNICODE)バイトコードに変更した。<br /> -->
+		因为只支持NT系统，变更为宽(UNICODE)字节码。<br />
 	</p>
 
-	<li>-waitvsync のプロパティ化</li>
+	<li>-waitvsync属性化</li>
 	<p>
-		コマンドラインオプションの-waitvsyncは廃止し、<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_waitVSync.html">Window.waitVSync</a>に変更した。<br />
-		これはWindowごとにD3DDeviceを持ち、垂直同期待ちがそのデバイスに依存するため。<br />
+		<!-- コマンドラインオプションの-waitvsyncは廃止し、<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_waitVSync.html">Window.waitVSync</a>に変更した。<br />
+		これはWindowごとにD3DDeviceを持ち、垂直同期待ちがそのデバイスに依存するため。<br /> -->
+命令行选项-waitvsync已过时，改为<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_waitVSync.html">Window.waitVSync</a>。<br />
+这是因为每个Window都有D3DDevice，垂直同步等待依赖于该设备。<br />
 	</p>
 
-	<li>PassThroughDrawDevice を BasicDrawDevice へ変更。</li>
+	<li>已将PassThroughDrawDevice更改为BasicDrawDevice。</li>
 	<p>
-		DirectDraw / Direct3D / GDI をベンチマークし、いずれかで描画を行っていた PassThroughDrawDevice を廃止し、Direct3D9 で描画を行う BasicDrawDevice を追加した。<br />
+		<!-- DirectDraw / Direct3D / GDI をベンチマークし、いずれかで描画を行っていた PassThroughDrawDevice を廃止し、Direct3D9 で描画を行う BasicDrawDevice を追加した。<br />
 		DrawDevice は BasicDrawDevice が標準となる。<br />
-		Direct3D9 以外で描画を行いたい場合はプラグインによる追加が必要となる。<br />
+		Direct3D9 以外で描画を行いたい場合はプラグインによる追加が必要となる。<br /> -->
+		废除了使用DirectDraw / Direct3D / GDI进行基准测试并使用其中任何一个进行绘制的PassThroughDrawDevice，并添加了使用Direct3D9进行绘制的BasicDrawDevice。<br />
+		DrawDevice的标准是BasicDrawDevice。<br />
+		如果要使用Direct3D9以外的内容进行绘制，则需要通过插件进行添加。<br />
 	</p>
 
-	<li>オプション説明をJSON化、リソースへ移動。</li>
+	<li>将选项说明JSON化，移动到资源。</li>
 	<p>
-		独自フォーマットであったオプション説明ファイルをJSONに変更した。<br />
+		<!-- 独自フォーマットであったオプション説明ファイルをJSONに変更した。<br />
 		また、ファイルをリソースへ移動し、プラグインからの読込みも公開関数からリソースに変更した。<br />
 		option_desc_ja.json にて指定可能。<br />
-		-userconf で起動された時、このファイルにしたがって設定項目が表示される。<br />
+		-userconf で起動された時、このファイルにしたがって設定項目が表示される。<br /> -->
+将自定义格式的说明文件更改为JSON。<br />
+另外，将文件移动到资源，从插件的读取也从公开函数变更到资源。<br />
+可以在option_desc_j.json中指定。<br />
+在-userconf中启动时，根据该文件显示设置项。<br />
 	</p>
 
-	<li>2GB を超える XP3 ファイルに対応。</li>
+	<li>	支持大于2GB的XP3文件。</li>
 	<p>
-		吉里吉里2 では読込み時にエラーが出ていたものを修正して 2GB 超の XP3 ファイルを読めるようにした。<br />
+		<!-- 吉里吉里2 では読込み時にエラーが出ていたものを修正して 2GB 超の XP3 ファイルを読めるようにした。<br /> -->
+		吉里吉里2修正了读取时出现的错误，使其能够读取超过2GB的XP3文件。<br />
 	</p>
 
-	<li>Windowの再生成排除。</li>
+	<li>不需要重新生成窗口。</li>
 	<p>
-		吉里吉里2 ではフルスクリーン化時ボーダースタイル変更時に、ウィンドウが作り直されていたが、吉里吉里Z では作り直しが行われなくなった。<br />
+		<!-- 吉里吉里2 ではフルスクリーン化時ボーダースタイル変更時に、ウィンドウが作り直されていたが、吉里吉里Z では作り直しが行われなくなった。<br />
 		そのため TVP_WM_DETACH と TVP_WM_ATTACH が呼ばれる機会はほとんどなくなった。<br />
-		フルスクリーン化/ウィンドウ化のタイミングを知るために、フルスクリーン変更前に TVP_WM_FULLSCREEN_CHANGING が、変更後に TVP_WM_FULLSCREEN_CHANGED が呼ばれるようになった。(フルスクリーンかどうか判定するものではないことに注意)<br />
+		フルスクリーン化/ウィンドウ化のタイミングを知るために、フルスクリーン変更前に TVP_WM_FULLSCREEN_CHANGING が、変更後に TVP_WM_FULLSCREEN_CHANGED が呼ばれるようになった。(フルスクリーンかどうか判定するものではないことに注意)<br /> -->
+在吉里吉里2中，全面屏幕化时边框样式变更时，窗口被重新生成，但在吉里吉里Z中不再进行重新生成。<br />
+因此TVP_WM_DETACH和TVP_WM_ATTACH被调用的机会几乎消失。<br />
+为了了解全屏化/窗口化的时机，现在在全屏变更之前调用TVP_WM_FULLSCREEN_CHANGING，在变更之后调用TVP_WM_FULLSCREEN_CHANGED。（请注意，它不能确定是否为全屏）<br />
 	</p>
 
-	<li>プラグイン公開関数の増減。</li>
+	<li>插件公有函数的增加或减少。</li>
 	<p>
-		以下の公開関数が追加された。<br />
+		增加了以下的公开函数。<br />
 		TVPCreateTextStreamForReadByEncoding<br />
 		TVPSetDefaultReadEncoding<br />
 		TVPGetDefaultReadEncoding<br />
@@ -234,7 +278,7 @@ isshow是false，事件来了就隐藏。
 		TVPChBlurAddMulCopy<br />
 		TVPChBlurCopy<br />
 		<br />
-		以下の公開関数が削除された。<br />
+		以下的公有函数被删除了。<br />
 		TVPMIDIOutData<br />
 		TVPEnsureDirectDrawObject<br />
 		TVPGetDirectDrawObjectNoAddRef<br />

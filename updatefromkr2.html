@@ -265,7 +265,7 @@ Plugin公有函数的TVPCreateTextStreamForReadByEncoding的第三个参数可�
 
 	<li>插件公有函数的增加或减少。</li>
 	<p>
-		增加了以下的公开函数。<br />
+		增加了以下的公有函数。<br />
 		TVPCreateTextStreamForReadByEncoding<br />
 		TVPSetDefaultReadEncoding<br />
 		TVPGetDefaultReadEncoding<br />
@@ -292,48 +292,50 @@ Plugin公有函数的TVPCreateTextStreamForReadByEncoding的第三个参数可�
 
 <div class="title_bar"><a name="delete">删除</a></div>
 <ol>
-	<li>コンソール削除</li>
+	<li>控制台删除</li>
 	<p>
-		最終的にリリースされるものに含まれていない方が良いので削除。<br />
+		因为最好排除出最终发布的内容中所以删除了。<br />
 	</p>
 
-	<li>コントローラー削除</li>
+	<li>控制器删除</li>
 	<p>
-		最終的にリリースされるものに含まれていない方が良いので削除。<br />
+		因为最好排除出最终发布的内容中所以删除了。<br />
 	</p>
 
-	<li>MIDI / CDDA / Pad クラス削除</li>
+	<li>MIDI/CDDA/Pad类删除</li>
 	<p>
-		現状を考えるとレガシー機能であるとの判断から削除。<br />
+		考虑到目前的情况，我们认为这是一个较旧功能，因此将其删除。<br />
 	</p>
 
-	<li>Win9X 系メソッド削除</li>
+	<li>Win9X方法删除</li>
 	<p>
-		XP以降のみ対応としたので、それ以前をサポートするための API を削除。<br />
+		已删除API以支持XP或更高版本。<br />
 	</p>
 
-	<li>DirectDraw 描画処理を削除</li>
+	<li>删除DirectDraw绘制处理</li>
 	<p>
-		ドライバの DirectDraw サポート状況が怪しくなってきていることと古いAPIであるので削除。<br />
+		已删除有问题的DirectDraw支持驱动程序的和旧API。<br />
 	</p>
 
-	<li>ERI フォーマットのサポートを削除</li>
+	<li>删除ERI格式支持</li>
 	<p>
-		現状では取り立てて使用する意味を見出せないので削除。<br />
+		因为在现状下找不到使用的意义，所以删除。<br />
 	</p>
+	
 
-	<li>Window クラスのいくつかのメソッドを削除。</li>
+	<li>删除Window类中的一些方法。</li>
 	<p>
-		削除されるメソッド/プロパティは以下の通り。<br />
+		删除的方法/属性如下所示。<br />
 		Window.layerLeft / Window.layerTop / Window.setLayerPos<br />
 		Window.innerSunken<br />
 		Window.showScrollBars<br />
 		Window.beginMove<br />
 	</p>
-	<li>Layer クラスの obsolete メソッドを削除。</li>
+	
+	<li>删除Layer类的obsolete方法。</li>
 	<p>
-		以前から obsolete で新しいメソッドへの置き換えが推奨されていたので削除。<br />
-		削除されるメソッドは以下の通り。<br />
+		因为以前就建议使用新方法替换obsolete，所以删除了。<br />
+		被删除的方法如下所示。<br />
 		Layer.affineBlend<br />
 		Layer.affinePile<br />
 		Layer.blendRect<br />
@@ -341,133 +343,136 @@ Plugin公有函数的TVPCreateTextStreamForReadByEncoding的第三个参数可�
 		Layer.stretchBlend<br />
 		Layer.stretchPile<br />
 	</p>
-
-	<li>マウスカーソルの内 Windows 標準でサポートされないものを削除。</li>
+	
+	<li>已删除鼠标光标中Windows标准不支持的内容。</li>
 	<p>
-		C++Builder 標準ではあっても、Windows 標準でないものは削除。<br />
-		削除されるカーソルは crDrag、crNoDrop、crHSplit、crVSplit、crMultiDrag、crSQLWait、crAppStart、crHBeam 。<br />
-		必要な場合は、自前でリソースを追加する必要がある。<br />
-		また、他のアイコンも C++ Builder とは少し見た目が異なる。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/MouseCursors.html">サポートされているカーソルはこちら</a>(画像は吉里吉里2のまま)<br />
+		已删除C++Builder标准但非Windows标准的内容。<br />
+		被删除的光标有 crDrag、crNoDrop、crHSplit、crVSplit、crMultiDrag、crSQLWait、crAppStart、crHBeam 。<br />
+		必要时，需要自行添加资源。<br />
+		此外，其他图标与C++Builder的外观也略有不同。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/MouseCursors.html">支持的光标在这里</a>(图片仍为吉里吉里2)<br />
 	</p>
 
-	<li>krflash.dll の削除</li>
+	<li>删除 krflash.dll </li>
 	<p>
-		krflash.dll は同梱されなくなった。<br />
-		吉里吉里2 のものを持ってくれば動く可能性はあるが公式にはサポートしない。<br />
-		flashPlayer プラグインへの移行を推奨。<br />
+		不再附带krflash.dll。<br />
+		如果拿着吉里吉里2的东西的话有可能可以使用，但是官方不支持。<br />
+		建议迁移到flashPlayer插件。<br />
 	</p>
 </ol>
 
 
 <div class="title_bar"><a name="added">增加</a></div>
 <ol>
-	<li>マルチタッチ機能のサポート。</li>
+	<li>支持多点触控功能。</li>
 	<p>
-		マルチタッチをサポートするデバイスが有効の場合、タッチが有効になる。<br />
-		1点のみのタッチがサポートされているような場合、マウス入力と同じように扱っても問題ないと考えられるため、タッチは有効にならない。<br />
-		タッチ処理ではなく、常にマウスと同じように処理したい場合は、<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_enableTouch.html">Window.enableTouch</a>をfalseにして、タッチを無効化する必要がある。<br />
+		如果启用了支持多点触控的设备，则会启用触控。<br />
+		如果只支持单点的触摸，即使和鼠标输入一样处理也没有问题，所以触控无效。<br />
+		如果不想触控处理，而是想要始终和鼠标一样处理的话，需要将<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_enableTouch.html">Window.enableTouch</a>设为false，使触控无效化。<br />
 	</p>
 
-	<li>Bitmap/ImageFunction/Rect クラス追加。</li>
+	<li>	添加了Bitmap/ImageFunction/Rect类。</li>
 	<p>
-		画像のみを保持するLayerクラスが欲しいという要望からBitmapクラスを新設。<br />
-		それに伴いLayerから分離して必要な機能を実装するためにImageFunctionとRectクラスを追加。<br />
+		由于希望获得仅保留图像的Layer类的要求，新设了Bitmap类。<br />
+		添加ImageFunction和Rect类，以实现与Layer分离的所需功能。<br />
 	</p>
 
-	<li>Octet.unpack と Array.pack の追加。</li>
+	<li>增加Octet.unpack 与 Array.pack 方法。</li>
 	<p>
-		吉里吉里2 で予定されていたものの追加されていない機能と思われる。<br />
-		これによりバイナリファイルの読込み、書き出しが行いやすくなる。<br />
-		<a href="http://krkrz.github.io/docs/tjs2/j/contents/octet.html">オクテット列に対する操作</a> と 
-		<a href="http://krkrz.github.io/docs/tjs2/j/contents/array.html">Array クラス</a> を参照のこと。
+		吉里吉里2预定而没有被添加的功能。<br />
+		这样就容易进行二进制文件的读入、写出。<br />
+		请参阅<a href="http://krkrz.github.io/docs/tjs2/j/contents/octet.html">字节串相关操作</a> 与
+		<a href="http://krkrz.github.io/docs/tjs2/j/contents/array.html">Array 类</a> 。
+	</p>
+	<li>-startup=“xxx”允许从任何脚本启动。</li>
+	<p>
+		因为测试是能指定方便而添加。<br />
+		有关详细信息，请参见<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/CommandLine.html">命令行选项</a>。<br />
 	</p>
 
-	<li>-startup="xxx" により任意スクリプトからの起動を可能に。</li>
+	<li>	支持5键鼠标“后退”和“前进”键。</li>
 	<p>
-		テスト等で指定できた方が便利であるため追加。<br />
-		詳細は<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/CommandLine.html">コマンドラインオプション</a>参照のこと。<br />
-	</p>
-
-	<li>5ボタンマウスの「戻る」「進む」キーサポート。</li>
-	<p>
-		Windows 2000 以降で追加され、使用可能であるため追加。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_onMouseDown.html">Window.onMouseDown</a> 等で使用可能に。<br />
-	</p>
-
-	<li>バックグラウンドでの画像読込み機能サポート。</li>
-	<p>
-		今までの同期読込みでは画像を更新しながら読み込んだ時に、表示が読込み時止まると言う問題があったため追加。<br />
-		非同期読込みによって表示の更新を止めずに次の画像の読込みが可能になった。
-		非同期読込みは <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Bitmap_loadAsync.html">Bitmap.loadAsync</a> によって行う。<br />
-	</p>
-
-	<li>TJS2 クラスの継承をネイティブ( C++ ) で記述可能に。</li>
-	<p>
-		C++ でも TJS2 クラスの継承を記述できた方が良いため追加。<br />
-	</p>
-
-	<li>drawGlyph を追加し外字を描画しやすくした。</li>
-	<p>
-		任意の字形を文字列に埋め込んで描画しやすくするために追加。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_drawGlyph.html">Layer.drawGlyph</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_ImageFunction_drawGlyph.html">ImageFunction.drawGlyph</a> で描画できる。<br />
-	</p>
-
-	<li>PNG/JPEG/TLG 保存機能の追加。</li>
-	<p>
-		読込みが出来るので、それと対になるように保存も追加。<br />
-		本体で BMP/PNG/JPEG/TLG の読み書きが出来るようになり便利に。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_saveLayerImage.html">Layer.saveLayerImage</a> / <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Bitmap_save.html">Bitmap.save</a> の type 引数でBitmap以外の形式指定が可能になった。<br />
+		在Windows 2000或更高版本中添加。<br />
+		可以在<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_onMouseDown.html">Window.onMouseDown</a>等上使用。<br />
 	</p>
 	
-	<li>FreeType での文字描画追加。</li>
+	<li>支持后台图像读取功能。</li>
 	<p>
-		吉里吉里2 では GDI による文字描画のみだったが、FreeType による描画もサポートした。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_rasterizer.html">Font.rasterizer</a> で指定可能。<br />
-		GDI よりも綺麗な文字描画が期待できる。<br />
+		因为现在的同步读入有在一边更新图像一边读入的时候，显示在读入时停止这样的问题而添加。<br />
+		通过非同步读取，不停止显示的更新，就可以读取下一个图像。
+		异步读取通过 <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Bitmap_loadAsync.html">Bitmap.loadAsync</a> 进行。<br />
 	</p>
 	
-	<li>ログハンドラの追加。</li>
+	<li>TJS2类继承现在可以用native（C++）编写。</li>
 	<p>
-		ログをスクリプトで表示可能にするためログハンドラを追加。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Debug_addLoggingHandler.html">Debug.addLoggingHandler</a> / 
+		C++中也可以编写TJS2类的继承会更好，因此添加。<br />
+	</p>
+	<li>添加drawGlyph，使外字的绘制变得容易。</li>
+	<p>
+		添加可在字符串中嵌入任意字形，以便于绘制。<br />
+		可以用<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_drawGlyph.html">Layer.drawGlyph</a> / 
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_ImageFunction_drawGlyph.html">ImageFunction.drawGlyph</a> 进行绘制。<br />
+	</p>
+
+	<li>增加了PNG/JPEG/TLG存储功能。</li>
+	<p>
+		因为能读入，和其对应地保存功能也添加。<br />
+		在本体能进行BMP/PNG/JPEG/TLG的读写会更方便。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_saveLayerImage.html">Layer.saveLayerImage</a> / <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Bitmap_save.html">Bitmap.save</a> 的type参数可以指定Bitmap以外的形式。<br />
+	</p>
+	
+	<li>添加FreeType字符绘制。</li>
+	<p>
+		虽然吉里吉里2只有基于GDI的文字绘制，但吉里吉里Z中也支持基于FreeType的绘制。<br />
+		可以在<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_rasterizer.html">Font.rasterizer</a> 中指定。<br />
+		可以预期比GDI更漂亮的文字描绘。<br />
+	</p>
+	<li>添加日志处理程序。</li>
+	<p>
+		添加日志处理程序以使日志可在脚本中处理。<br />
+		可由<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Debug_addLoggingHandler.html">Debug.addLoggingHandler</a> / 
 		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Debug_removeLoggingHandler.html">removeLoggingHandler</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Debug_getLastLog.html">getLastLog</a> によって処理可能。
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Debug_getLastLog.html">getLastLog</a> 处理。
 	</p>
 	
-	<li>文字列の実描画範囲取得メソッドの追加。</li>
+
+	<li>添加字符串实际绘制范围获取方法。</li>
 	<p>
-		フォントによって綺麗に指定位置へ描画することが困難な場合もあるため文字列の実描画範囲取得メソッドを追加した。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_getGlyphDrawRect.html">Font.getGlyphDrawRect</a> で取得可能。<br />
-	</p>
-	
-	<li>取消線とアンダーラインの実装。</li>
-	<p>
-		吉里吉里2 では未実装となっていた取消線とアンダーラインを実装した。<br />
-		これによって取消線やアンダーラインを含む文字を描画できる。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_strikeout.html">Font.strikeout</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_underline.html">underline</a> で指定可能。<br />
+		<!-- フォントによって綺麗に指定位置へ描画することが困難な場合もあるため文字列の実描画範囲取得メソッドを追加した。<br />
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_getGlyphDrawRect.html">Font.getGlyphDrawRect</a> で取得可能。<br /> -->
+		根据字体在指定位置漂亮地绘制也存在困难的情况，因此添加了字符串的实际绘制范围取得方法。<br />
+		可通过F<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_getGlyphDrawRect.html">Font.getGlyphDrawRect</a> 获得。<br />
 	</p>
 
-	<li>Opusサウンドフォーマットのサポート。</li>
+	<li>删除线和下划线的实装。</li>
 	<p>
-		Vorbis より高圧縮率の <a href="http://opus-codec.org/">Opusサウンドフォーマット</a> を kropus.dll にてサポートした。<br />
+		实装了吉里吉里2中未实装的删除线和下划线。<br />
+		由此可以绘制包含删除线和下划线的文字。<br />
+		可以在<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_strikeout.html">Font.strikeout</a> / 
+		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_underline.html">underline</a> 中指定。<br />
+	</p>
+
+	<li>Opus音乐格式支持。</li>
+	<p>
+		<!-- Vorbis より高圧縮率の <a href="http://opus-codec.org/">Opusサウンドフォーマット</a> を kropus.dll にてサポートした。<br />
 		短い音でもファイルサイズが小さくなるため、効果音などにも利用しやすい。<br />
-		また、音声に最適化された圧縮方法も持っているため、台詞などで効果を発揮する。<br />
+		また、音声に最適化された圧縮方法も持っているため、台詞などで効果を発揮する。<br /> -->
+		kropus.dll支持比Vorbis更高压缩率的<a href="http://opus-codec.org/">Opus音乐格式</a>。<br />
+		即使是较短的声音文件大小也会变小，所以也易用于音效等。<br />
+		另外，由于还具有音乐最优化的压缩方法，所以可以通过台词等发挥效果。<br />
 	</p>
 
-	<li>吉里吉里デバッガ同梱。</li>
+	<li>附带吉里吉里调试器。</li>
 	<p>
-		従来別配布となっていた吉里吉里デバッガを同梱し、デバッガ有効化バイナリも含めるようにした。<br />
-		TJS2 スクリプトのデバッグがより行いやすくなる。<br />
+		与以往分别发布的吉里吉里调试器一起提供，启用调试的二进制文件也包含在内。<br />
+		更易于调试TJS2脚本。<br />
 	</p>
 
-	<li>スクリプト例外発生時起動エディタ指定追加。</li>
+	<li>添加脚本异常时启动的编辑器。</li>
 	<p>
-		例外発生時に Pad を使用して表示されていたものを削除したため、それに変わるものとして任意のエディタを指定可能とした。<br />
-		-exceptionexe と -exceptionarg で指定可能。<br />
-		詳細は<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/CommandLine.html">コマンドラインオプション</a>参照のこと。<br />
+		由于删除了显示内容的异常发生时使用的Pad，因此可以指定任意的编辑器作为其替代。<br />
+		可由-exceptionexe和-exceptionarg指定。<br />
+		有关详细信息，请参见<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/CommandLine.html">命令行选项</a>。<br />
 
 	</p>
 </ol>

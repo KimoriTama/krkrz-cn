@@ -7,12 +7,12 @@
 <body>
 <a name="top"></a>
 <div id="container">
-<div id="title-banner"><h1>開発者編 FAQ</h1></div>
+<div id="title-banner"><h1>开发者篇 FAQ</h1></div>
 
 <div class="content">
-<div class="title_bar"><a name="about">初めに</a></div>
+<div class="title_bar"><a name="about">前言</a></div>
 <p>
-吉里吉里で開発中に遭遇する可能性のある問題についての FAQ です。
+    关于吉里吉里开发过程中可能遇到的问题的常见问题。。
 </p>
 <br />
 <!--
@@ -31,39 +31,40 @@
 </dl>
 <br />
 -->
-<div class="title_bar"><a name="relese">配布</a></div>
+<div class="title_bar"><a name="relese">发布</a></div>
 <dl>
-<dt>Q.exeのアイコンを変更したい</dt>
-<dd>A.吉里吉里Zでは標準のアイコン変更ツールは付属していません。<br />
-Visual Studio でアイコンを変更して再ビルドするか、リソースを変更するフリーソフトでアイコンを変更してください。<br />
-<a href="https://www.google.co.jp/?gws_rd=ssl#safe=off&q=exe+%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9+%E6%9B%B8%E3%81%8D%E6%8F%9B%E3%81%88+%E3%83%95%E3%83%AA%E3%83%BC%E3%82%BD%E3%83%95%E3%83%88&pws=0">"exe リソース 書き換え フリーソフト"</a> などで検索してください。<br />
+   
+<dt>Q. 要更改.exe的图标</dt>
+<dd>A.吉里吉里Z不附带标准的图标更改工具。<br />
+    在Visual Studio中更改图标并重新构建，或在更改资源的免费软件中更改图标。<br />
+搜索<a href="https://www.google.co.jp/?gws_rd=ssl#safe=off&q=exe+%E3%83%AA%E3%82%BD%E3%83%BC%E3%82%B9+%E6%9B%B8%E3%81%8D%E6%8F%9B%E3%81%88+%E3%83%95%E3%83%AA%E3%83%BC%E3%82%BD%E3%83%95%E3%83%88&pws=0">"exe 资源 替换 免费软件"</a> 等。<br />
 </dd>
 </dl>
 <br />
-<div class="title_bar"><a name="movie">動画</a></div>
+<div class="title_bar"><a name="movie">视频</a></div>
 <dl>
-<dt>Q.MPEG 1を使用して横 1024 を超えるとアスペクト比がおかしくなる</dt>
-<dd>A.Mixer(VMR)やオーバーレイモードの場合アスペクト比がおかしくなる不具合が環境かkrmovieの実装にあるようです。<br />
-レイヤーモードを使用するか WMV、H.264 を使用してください。<br />
+<dt>Q.使用MPEG 1，如果宽度超过1024，宽高比会变得不正常</dt>
+<dd>A.  实装的krmovie或本体环境中可能存在一个错误，在Mixer(VMR)和覆盖模式下，导致宽高比不正常。<br />
+    请使用图层模式或WMV或H.264。。<br />
 </dd>
-<dt>Q.WMV をオーバーレイモードで再生すると上下反転する</dt>
-<dd>A.環境によって発生するようです。<br />
-Mixer(VMR)モードを使用するようにしてください。<br />
-</dd>
-</dl>
-<br />
-<div class="title_bar"><a name="save">セーブデータ</a></div>
-<dl>
-<dt>Q.スクリプトを修正してもその変更が反映されない</dt>
-<dd>A.savedate フォルダに修正前のセーブデータが残っていて、そのデータによって挙動がおかしくなっている可能性があります。<br />
-savedate フォルダを丸々消してから再実行すると解消されるかもしれません。<br />
+<dt>Q.在覆盖模式下播放WMV时垂直翻转</dt>
+<dd>A.似乎是由环境造成的。<br />
+    确保使用混合器(VMR)模式。<br />
 </dd>
 </dl>
 <br />
-<div class="title_bar"><a name="tools">各種ツール</a></div>
+<div class="title_bar"><a name="save">保存数据</a></div>
 <dl>
-<dt>Q.付属のツールなど、吉里吉里で使うデータ以外の用途で使ってもいいの？</dt>
-<dd>A.付属ツールの使い道には特に制限などありません。</dd>
+<dt>Q.修改脚本不会反映该更改</dt>
+<dd>A.savedate文件夹可能包含未修改的存储数据，并且这些数据可能导致行为不正常。<br />
+    可能需要清除savedate文件夹，然后重新运行。<br />
+</dd>
+</dl>
+<br />
+<div class="title_bar"><a name="tools">各种工具</a></div>
+<dl>
+<dt>Q.附属的工具等，吉里吉里使用的数据以外的用途也可以使用吗？</dt>
+<dd>A.附属工具的用途没有特别的限制。</dd>
 </dl>
 <br />
 </div>

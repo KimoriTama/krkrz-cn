@@ -14,9 +14,9 @@
 	<link href="index.html" target="_top" rel="Start" title="é¦é¡µ" />
 </head>
 <body>
-<h1><a id="id24" name="id24">プリミティブ型</a>
+<h1><a id="id24" name="id24">基本类型</a>
 </h1><div class="para"><div>
-　tjsTypes.h で定義されているプリミティブ型がいくつかあります。<br />
+	　有几个在tjsTypes.h中定义的基本类型。<br />
 <br />
 <dl>
 <dt><a id="id25" name="id25" class="targanchor"><dfn>tjs_int</dfn></a></dt>
@@ -40,32 +40,34 @@
 <dt><a id="id34" name="id34" class="targanchor"><dfn>tjs_uint64</dfn></a></dt>
 <dd>64bitの符号なし整数</dd>
 <dt><a id="id35" name="id35" class="targanchor"><dfn>tjs_char</dfn></a></dt>
-<dd>ワイド文字(TJS2の文字列型のプリミティブ型として使用されます)</dd>
+<dd>宽字符（用作TJS2字符串类型的基本类型）</dd>
 <dt><a id="id36" name="id36" class="targanchor"><dfn>tjs_nchar</dfn></a></dt>
-<dd>ナロー文字</dd>
+<dd>窄字符</dd>
 <dt><a id="id37" name="id37" class="targanchor"><dfn>tjs_real</dfn></a></dt>
-<dd>実数型(double)</dd>
+<dd>实数型(double)</dd>
 <dt><a id="id38" name="id38" class="targanchor"><dfn>tTVInteger</dfn></a></dt>
-<dd>tjs_int64と同じ</dd>
+<dd>与tjs_int64相同</dd>
 <dt><a id="id39" name="id39" class="targanchor"><dfn>tTVReal</dfn></a></dt>
-<dd>tjs_realと同じ</dd></dl></div></div>
+<dd>与tjs_real相同</dd></dl></div></div>
 
 
 
 <h1><a id="id40" name="id40">tTJSString</a>
 </h1><div class="para"><div>
-　tTJSString 型は TJS2 で用いる文字列型で、tjs_char 型のゼロ終結文字列を扱います。tjsString.cpp / tjsString.h に定義されています。また、短く <code class="inlinecode">ttstr</code> という型名でも利用可能です。<br />
-　この型は文字列用のメモリの管理を自動的に行うほか、<a target="main" class="jump" href="variant.html">tTJSVariant 类型</a> との親和性が高い型です。<br />
+<!-- 　tTJSString 型は TJS2 で用いる文字列型で、tjs_char 型のゼロ終結文字列を扱います。tjsString.cpp / tjsString.h に定義されています。また、短く <code class="inlinecode">ttstr</code> という型名でも利用可能です。<br />
+　この型は文字列用のメモリの管理を自動的に行うほか、<a target="main" class="jump" href="variant.html">tTJSVariant 类型</a> との親和性が高い型です。<br /> -->
+　tTJSString 类型是TJS2中使用的字符串型，tjs_char类型处理零结尾字符串。在tjsString.cpp/tjsString.h中定义。另外，较短 <code class="inlinecode">ttstr</code> 这个类型名也可以使用。<br />
+　这个类型除了自动进行字符串用的内存的管理以外，是与<a target="main" class="jump" href="variant.html">tTJSVariant 类型</a> 的亲和性很高的类型。<br />
 </div></div>
 <h1><a id="id41" name="id41">eTJS</a>
 </h1><div class="para"><div>
-　eTJS 型は C++ 例外オブジェクトの基本型です。tjsError.h に定義されています。<a id="id42" name="id42" class="targanchor"><dfn>GetMessage</dfn></a> というメソッドがあり、例外とともに投げられたメッセージ文字列を取得することができます。</div></div>
+	 　eTJS类型是C++异常对象的基本类型。在tjsError.h中定义。有一种<a id="id42" name="id42" class="targanchor"><dfn>GetMessage</dfn></a> 的方法，可以获取与异常一起抛出的消息字符串。</div></div>
 
 <h1><a id="id43" name="id43">TJS_W</a>
 </h1><div class="para"><div>
-　文字列リテラルを tjs_char * 型に変換するためのマクロです。<br />
+　	用于将字符串文字转换为tjs_char*类型的宏。<br />
 <br />
-例 : TJS_W(&quot;文字列リテラル&quot;)<br />
+示例 : TJS_W(&quot;字符串文字&quot;)<br />
 </div></div>
 	<script type="text/javascript" charset="UTF-8" src="documentid.js" ></script>
 	<script type="text/javascript" charset="UTF-8" src="postcontent.js" ></script>

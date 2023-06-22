@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta HTTP-EQUIV="CONTENT-TYPE" CONTENT="TEXT/HTML; CHARSET=UTF-8">
-<title>吉里吉里Z 機能仕様書 / ファイルフォーマット</title>
+<title>吉里吉里Z 功能规格书 / 文件格式</title>
 <link rel="stylesheet" href="styles-site.css" type="text/css" />
 </head>
 <body>
@@ -9,140 +9,139 @@
 <div id="top_link"><a href="./index.html">Topへ</a></div>
 <div id="container">
 <div id="title-banner">
-<h1>ファイルフォーマット</h1>
+<h1>文件格式</h1>
 </div>
 
 <div class="content">
-<p>吉里吉里Z がサポートするファイルフォーマットついて記載。</p>
+<p>记载了吉里吉里Z支持的文件格式。</p>
 <h3>目次</h3>
-<p><a href="#fileformat">ファイルフォーマット</a><br />
+<p><a href="#fileformat">文件格式</a><br />
 </p>
 <br>
-<div class="title_bar"><a name="fileformat">ファイルフォーマット</a></div>
+<div class="title_bar"><a name="fileformat">文件格式</a></div>
 <br>
 <table frame="box" rules="all">
-	<thead><tr><td>種類</td><td>形式</td><td>拡張子</td><td>説明</td></tr></thead>
+	<thead><tr><td>种类</td><td>形式</td><td>后缀名</td><td>说明</td></tr></thead>
 	<tbody>
 		<tr>
 			<td rowspan="7">静止画像</td>
-			<td>Windows ビットマップ (Bitmap)</td>
+			<td>Windows 位图 (Bitmap)</td>
 			<td>.bmp</td>
-			<td>無圧縮形式のみサポート。<br />
-			32ビットビットマップの場合、αチャンネル付きと見なされる。</td>
+			<td>仅支持未压缩格式。<br />
+				对于32位位图，认为具有α通道。</td>
 		</tr>
 		<tr>
 			<td>JPEG</td>
 			<td>.jpg<br />.jpeg</td>
-			<td>読み込み時精度を指定可能。<br />
-			設定可能な値は 'high' (高い), 'normal' (標準), 'low' (低い) のいずれか。<br />
-			デフォルトは'normal'。<br />
-			low はIDCTに固定小数点(整数)AAN、色差拡大補間なし。<br />
-			normal はIDCTに固定小数点(整数)LLM、色差拡大補間あり。<br />
-			high はIDCTに浮動小数点AAN、色差拡大補間あり。<br />
-			指定方法については<a href="../kirikiriz/j/contents/CommandLine.html#id47">起動オプション -jpegdec (JPEG画像デコード精度)</a>を参照のこと。<br />
+			<td>可以指定读入精度。<br />
+				可以设定的值包括 'high' (高), 'normal' (正常), 'low' (低) 。<br />
+			默认为'normal'。<br />
+			low是IDCT的定点（整数）AAN，无色差放大插值。<br />
+			normal是IDCT的定点（整数）LLM，具有色差放大插值。<br />
+			high为IDCT浮点AAN，色差扩大插值。<br />
+			关于指定方法请参考<a href="../kirikiriz/j/contents/CommandLine.html#id47">启动选项 -jpegdec (JPEG图像编码精度)</a>。<br />
 		</tr>
 		<tr>
 			<td>Portable Network Graphic (PNG)</td>
 			<td>.png</td>
-			<td>αチャンネルや透明色指定に対応。</td>
+			<td>α通道和透明色指定对应。</td>
 		</tr>
 		<tr>
 			<td>TLG5</td>
 			<td>.tlg</td>
-			<td>吉里吉里独自形式。<br />
-			展開速度が高速(PNGの4倍速程度)なのが特徴。<br />
-			<a href="../kirikiriz/j/contents/TPC.html">画像フォーマットコンバータ</a>で変換可能。</td>
+			<td>吉里吉里独有的形式。<br />
+				其特点是展开速度快（PNG的4倍速度左右）。<br />
+			可用<a href="../kirikiriz/j/contents/TPC.html">图像格式转换器</a></td>
 		</tr>
 		<tr>
 			<td>TLG6</td>
 			<td>.tlg</td>
-			<td>吉里吉里独自形式。<br />
-			PNGやTLG5よりも圧縮率は高いが、TLG5の倍ほど展開に時間がかかります。<br />
-			ただ、それでもPNGの2倍速程度なので高速です。<br />
-			<a href="../kirikiriz/j/contents/TPC.html">画像フォーマットコンバータ</a>で変換可能。</td>
+			<td>吉里吉里独有的形式。<br />
+				压缩比PNG和TLG5高，但展开时间是TLG5的两倍。<br />
+				不过，即使这样也是PNG的2倍速度，所以速度还是很快的。<br />
+				可用<a href="../kirikiriz/j/contents/TPC.html">图像格式转换器</a>转换。</td>
 		</tr>
 		<tr>
-			<td>その他</td>
+			<td>其他</td>
 			<td>.*</td>
-			<td>Susie-plugin による拡張が可能。</td>
+			<td>可通过Susie-plugin进行扩展。</td>
 		</tr>
 
 		<tr>
-			<td rowspan="5">音声</td>
+			<td rowspan="5">音乐</td>
 			<td>WAVE</td>
 			<td>.wav</td>
-			<td>無圧縮WAVE形式をサポート。</td>
+			<td>支持未压缩的WAVE格式。</td>
 		</tr>
 		<tr>
 			<td>Ogg Vorbis</td>
 			<td>.ogg</td>
-			<td>要wuvorbis.dllプラグイン</td>
+			<td>需要wuvorbis.dll插件</td>
 		</tr>
 		<tr>
-			<td>その他</td>
+			<td>其他</td>
 			<td>.*</td>
-			<td>プラグインにより拡張可能。</td>
+			<td>可通过插件进行扩展。</td>
 		</tr>
 
 		<tr>
-			<td rowspan="4">動画</td>
+			<td rowspan="4">视频</td>
 			<td>MPEG I</td>
 			<td>.mpg<br />.mpeg<br />.mpv<br />.m1v<br />.dat</td>
-			<td>MPEG Iのみサポート。<br />
-			MPEG2などそれ以降は非サポート。<br />
-			要 krmovie.dll。<br />
-			再生機にWindows Media Player 6.4以降、<br />
-			またはDirectX 7以降がインストールされていること。</td>
+			<td>仅支持MPEG I。<br />
+				不支持MPEG2或更高版本。<br />
+			需要 krmovie.dll。<br />
+			播放器安装Windows Media Player 6.4或更高版本、<br />
+			或安装DirectX 7或更高版本。</td>
 		</tr>
 		<tr>
 			<td>Windows Media Video (WMV)</td>
 			<td>.wmv</td>
-			<td>要 krmovie.dll。<br />
-			再生機にWindows Media Player 9以降がインストールされていること。</td>
+			<td>需要 krmovie.dll。<br />
+				播放器必须安装Windows Media Player 9或更高版本。</td>
 		</tr>
 		<tr>
 			<td>AVI</td>
 			<td>.avi</td>
-			<td>非公式サポート。<br />
-			要 krmovie.dll。<br />
-			Codecなどの問題により再生出来ないことなどがあり、公式サポートは行わない。</td>
+			<td>非官方支持。<br />
+			需要要 krmovie.dll。<br />
+			由于Codec等问题会无法播放的问题，不提供官方支持。</td>
 		</tr>
 
 		<tr>
-			<td rowspan="1">アニメーション</td>
-			<td>ASD ファイル</td>
+			<td rowspan="1">动画</td>
+			<td>ASD 文件</td>
 			<td>.asd</td>
-			<td>吉里吉里独自形式。<br />
-			KAG3 でサポートされる。<br />
-			AnimationLayer.tjsのコメント、もしくは<a href="http://homepage1.nifty.com/gutchie/KAG3Animation.html">吉里吉里2/KAG3のアニメーション</a>を参照のこと</td>
+			<td>吉里吉里独有的形式。<br />
+				请参阅AnimationLayer.tjs的注释或是<a href="http://homepage1.nifty.com/gutchie/KAG3Animation.html">吉里吉里2/KAG3的动画</a></td>
 		</tr>
 
 		<tr>
-			<td rowspan="3">アーカイブ</td>
+			<td rowspan="3">归档文件</td>
 			<td>XP3</td>
 			<td>.xp3</td>
-			<td>吉里吉里独自形式。<br />
-			<a href="../kirikiriz/j/contents/Releaser.html">Releaser</a>にて作成する。</td>
+			<td>吉里吉里独有的形式。<br />
+			通过<a href="../kirikiriz/j/contents/Releaser.html">Releaser</a>生成。</td>
 		</tr>
 		<tr>
-			<td>その他</td>
+			<td>其他</td>
 			<td>.*</td>
-			<td>プラグインにより拡張可能。</td>
+			<td>可通过插件进行扩展。</td>
 		</tr>
 
 		<tr>
-			<td rowspan="2">フォント</td>
-			<td>レンダリング済みフォント</td>
+			<td rowspan="2">字体</td>
+			<td>渲染字体</td>
 			<td>.tft</td>
-			<td>吉里吉里独自形式。<br />
-			<a href="../kirikiriz/j/contents/FontMaker.html">レンダリング済みフォントデータ作成ツール</a>にて生成する</td>
+			<td>吉里吉里独有的形式。<br />
+				使用<a href="../kirikiriz/j/contents/FontMaker.html">渲染字体数据创建工具</a>生成</td>
 		</tr>
 		<tr>
-			<td>TrueType/OpenType フォント</td>
+			<td>TrueType/OpenType 字体</td>
 			<td>.ttf<br />.otf</td>
-			<td>非公式サポート。<br />
-			システムにフォントをインストールすることなく使える。<br />
-			要<a href="../../src/plugins/win32/addFont/">addFont.dll</a>。Windows2000/XP/Vista のみ対応。</td>
+			<td>非官方支持。<br />
+				无需在系统上安装字体即可使用。<br />
+			需要要<a href="../../src/plugins/win32/addFont/">addFont.dll</a>。仅Windows2000/XP/Vista 支持。</td>
 		</tr>
 
 	</tbody>

@@ -1,7 +1,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>吉里吉里Z / 吉里吉里Zでの吉里吉里2からの変更点一覧</title>
+<title>吉里吉里Z / 吉里吉里Z中吉里吉里2的变更点一览</title>
 <link rel="stylesheet" href="styles-site.css" type="text/css" />
 </head>
 <body>
@@ -83,16 +83,16 @@
 	<li>工具提示处理的标准变更。</li>
 	<p>
 		<!-- VCL のツールチップは、コモンコントロールのツールチップではなく独自実装と言うことで、コモンコントロールに置き換えるか、同じように実装するか検討し、イベントを発生させて Layer として描画可能な形に変更した。<br />
-		Layer.hint を設定し、カーソルが一定時間停止しヒント表示タイミングになると <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_onHintChanged.html">Window.onHintChanged</a> イベントが発生する。<br />
-		カーソル停止時間は、<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_hintDelay.html">Window.hintDelay</a> で指定可能。<br />
-		ヒントを描画するレイヤーには <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_ignoreHintSensing.html">Layer.ignoreHintSensing</a> を有効にして、ヒント表示を無視させる。<br />
+		Layer.hint を設定し、カーソルが一定時間停止しヒント表示タイミングになると <a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Window_onHintChanged.html">Window.onHintChanged</a> イベントが発生する。<br />
+		カーソル停止時間は、<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Window_hintDelay.html">Window.hintDelay</a> で指定可能。<br />
+		ヒントを描画するレイヤーには <a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Layer_ignoreHintSensing.html">Layer.ignoreHintSensing</a> を有効にして、ヒント表示を無視させる。<br />
 		これで onHintChanged で isshow が true の時、ヒントを最前面レイヤーに描画し、ヒントレイヤーはマウスメッセージは無視されるように設定すれば従来と同じような表示が出来る。<br />
 		isshow が false でイベントが来たら非表示にする。<br />
 		<a href="https://github.com/jin1016/krkrz/blob/master/script/Sample/tooltip/startup.tjs">GitHub にサンプル</a>を上げている。<br /> -->
 		VCL的工具提示不是公共控件的工具提示，而是各自实现，所以考虑是替换为公共控件，还是以同样的方式实现，发生事件后变更为可以作为Layer绘制的形式。<br />
-		设置Layer.hint，当光标停止一定时间并到达提示显示定时时，发生<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_onHintChanged.html">Window.onHintChanged</a> 事件。<br />
-		光标停止时间可在<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_hintDelay.html">Window.hintDelay</a> 中指定。<br />
-		对绘制提示的层，启用 <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_ignoreHintSensing.html">Layer.ignoreHintSensing</a> 以忽略提示显示。<br />
+		设置Layer.hint，当光标停止一定时间并到达提示显示定时时，发生<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Window_onHintChanged.html">Window.onHintChanged</a> 事件。<br />
+		光标停止时间可在<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Window_hintDelay.html">Window.hintDelay</a> 中指定。<br />
+		对绘制提示的层，启用 <a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Layer_ignoreHintSensing.html">Layer.ignoreHintSensing</a> 以忽略提示显示。<br />
 		这样，在 onHintChanged 中 isshow 为 true时，将提示绘制在最前面层，如果将提示层设定为忽略鼠标消息，则能够进行与以往相同的方式显示。  の時、ヒントを最前面レイヤーに描画し、ヒントレイヤーはマウスメッセージは無視されるように設定すれば従来と同じような表示が出来る。<br />
 		isshow 为 false 时发生事件时就隐藏显示。<br />
 		这是<a href="https://github.com/jin1016/krkrz/blob/master/script/Sample/tooltip/startup.tjs">GitHub 样例</a>。<br />
@@ -124,7 +124,7 @@
 		Plugin用公開関数の TVPCreateTextStreamForReadByEncoding の第3引数にエンコーディング指定可能。<br />
 		"Shift_JIS" か "UTF-8" のどちらかを指定する。<br />
 		また、オプションの"-readencoding"で"Shift_JIS" か "UTF-8" のどちらかを指定することでデフォルトを変更できる。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Scripts_textEncoding.html">Scripts.textEncoding</a> で "Shift_JIS" か "UTF-8" のどちらかの指定も可能。<br />
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Scripts_textEncoding.html">Scripts.textEncoding</a> で "Shift_JIS" か "UTF-8" のどちらかの指定も可能。<br />
 		プラグインの KAGParser もこの設定に従う。<br />
 		プラグインで TVPCreateTextStreamForReadByEncoding を呼び出している箇所を変更すれば、任意のエンコーディングで読み込む。<br /> -->
 因为UTF-8更通用，所以改变了默认的Shift-JIS。<br />
@@ -132,7 +132,7 @@
 Plugin公有函数的TVPCreateTextStreamForReadByEncoding的第三个参数可以指定编码。<br />
 指定“Shift_JIS”或“UTF-8”。<br />
 此外，可以通过在选项“-readencoding”中指定“Shift_JIS”或“UTF-8”来更改默认值。<br />
-您可以在<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Scripts_textEncoding.html">Scripts.textEncoding</a> 中指定“Shift_JIS”或“UTF-8”。<br />
+您可以在<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Scripts_textEncoding.html">Scripts.textEncoding</a> 中指定“Shift_JIS”或“UTF-8”。<br />
 插件KAGParser也遵循此设置。<br />
 如果插件更改调用TVPCreateTextStreamForReadByEncoding的位置，则可以以任意编码读取。<br />
 	</p>
@@ -162,19 +162,19 @@ Plugin公有函数的TVPCreateTextStreamForReadByEncoding的第三个参数可�
 	<li>随着多显示器的应对，改变屏幕尺寸等返回的值。</li>
 	<p>
 		<!-- 従来プライマリーディスプレイの値を常に返すようになっていたが、複数のディスプレイを考慮した値を返すように変更。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_screenWidth.html">System.screenWidth</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_screenHeight.html">screenHeight</a> は、メインウィンドウがあるモニタのサイズを返す。メインウィンドウが作られる前はプライマリモニタのサイズで返す。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopLeft.html">System.desktopLeft</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopTop.html">desktopTop</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopWidth.html">desktopWidth</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopHeight.html">desktopHeight</a> は、メインウィンドウがあるモニタの作業領域を返す。メインウィンドウがない時は、プライマリモニタの作業領域を返す。<br /> -->
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_System_screenWidth.html">System.screenWidth</a> / 
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_System_screenHeight.html">screenHeight</a> は、メインウィンドウがあるモニタのサイズを返す。メインウィンドウが作られる前はプライマリモニタのサイズで返す。<br />
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_System_desktopLeft.html">System.desktopLeft</a> / 
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_System_desktopTop.html">desktopTop</a> / 
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_System_desktopWidth.html">desktopWidth</a> / 
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_System_desktopHeight.html">desktopHeight</a> は、メインウィンドウがあるモニタの作業領域を返す。メインウィンドウがない時は、プライマリモニタの作業領域を返す。<br /> -->
 		以前总是返回主显示器的值，现在改为返回考虑了多个显示器的值。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_screenWidth.html">System.screenWidth</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_screenHeight.html">screenHeight</a> 返回主窗口所在的显示器的大小。在主窗口创建之前按主显示器的大小返回。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopLeft.html">System.desktopLeft</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopTop.html">desktopTop</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopWidth.html">desktopWidth</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_System_desktopHeight.html">desktopHeight</a> 返回主窗口所在显示器的工作区。如果没有主窗口，则返回主显示器的工作区。<br />
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_System_screenWidth.html">System.screenWidth</a> / 
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_System_screenHeight.html">screenHeight</a> 返回主窗口所在的显示器的大小。在主窗口创建之前按主显示器的大小返回。<br />
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_System_desktopLeft.html">System.desktopLeft</a> / 
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_System_desktopTop.html">desktopTop</a> / 
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_System_desktopWidth.html">desktopWidth</a> / 
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_System_desktopHeight.html">desktopHeight</a> 返回主窗口所在显示器的工作区。如果没有主窗口，则返回主显示器的工作区。<br />
 	</p>
 
 
@@ -219,9 +219,9 @@ Plugin公有函数的TVPCreateTextStreamForReadByEncoding的第三个参数可�
 
 	<li>-waitvsync属性化</li>
 	<p>
-		<!-- コマンドラインオプションの-waitvsyncは廃止し、<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_waitVSync.html">Window.waitVSync</a>に変更した。<br />
+		<!-- コマンドラインオプションの-waitvsyncは廃止し、<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Window_waitVSync.html">Window.waitVSync</a>に変更した。<br />
 		これはWindowごとにD3DDeviceを持ち、垂直同期待ちがそのデバイスに依存するため。<br /> -->
-命令行选项-waitvsync已过时，改为<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_waitVSync.html">Window.waitVSync</a>。<br />
+命令行选项-waitvsync已过时，改为<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Window_waitVSync.html">Window.waitVSync</a>。<br />
 这是因为每个Window都有D3DDevice，垂直同步等待依赖于该设备。<br />
 	</p>
 
@@ -350,7 +350,7 @@ Plugin公有函数的TVPCreateTextStreamForReadByEncoding的第三个参数可�
 		被删除的光标有 crDrag、crNoDrop、crHSplit、crVSplit、crMultiDrag、crSQLWait、crAppStart、crHBeam 。<br />
 		必要时，需要自行添加资源。<br />
 		此外，其他图标与C++Builder的外观也略有不同。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/MouseCursors.html">支持的光标在这里</a>(图片仍为吉里吉里2)<br />
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/MouseCursors.html">支持的光标在这里</a>(图片仍为吉里吉里2)<br />
 	</p>
 
 	<li>删除 krflash.dll </li>
@@ -368,7 +368,7 @@ Plugin公有函数的TVPCreateTextStreamForReadByEncoding的第三个参数可�
 	<p>
 		如果启用了支持多点触控的设备，则会启用触控。<br />
 		如果只支持单点的触摸，即使和鼠标输入一样处理也没有问题，所以触控无效。<br />
-		如果不想触控处理，而是想要始终和鼠标一样处理的话，需要将<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_enableTouch.html">Window.enableTouch</a>设为false，使触控无效化。<br />
+		如果不想触控处理，而是想要始终和鼠标一样处理的话，需要将<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Window_enableTouch.html">Window.enableTouch</a>设为false，使触控无效化。<br />
 	</p>
 
 	<li>	添加了Bitmap/ImageFunction/Rect类。</li>
@@ -381,26 +381,26 @@ Plugin公有函数的TVPCreateTextStreamForReadByEncoding的第三个参数可�
 	<p>
 		吉里吉里2预定而没有被添加的功能。<br />
 		这样就容易进行二进制文件的读入、写出。<br />
-		请参阅<a href="http://krkrz.github.io/docs/tjs2/j/contents/octet.html">字节串相关操作</a> 与
-		<a href="http://krkrz.github.io/docs/tjs2/j/contents/array.html">Array 类</a> 。
+		请参阅<a href="http://kkimoritama.github.io/krkrz-cn/docs/tjs2/j/contents/octet.html">字节串相关操作</a> 与
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/tjs2/j/contents/array.html">Array 类</a> 。
 	</p>
 	<li>-startup=“xxx”允许从任何脚本启动。</li>
 	<p>
 		因为测试是能指定方便而添加。<br />
-		有关详细信息，请参见<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/CommandLine.html">命令行选项</a>。<br />
+		有关详细信息，请参见<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/CommandLine.html">命令行选项</a>。<br />
 	</p>
 
 	<li>	支持5键鼠标“后退”和“前进”键。</li>
 	<p>
 		在Windows 2000或更高版本中添加。<br />
-		可以在<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Window_onMouseDown.html">Window.onMouseDown</a>等上使用。<br />
+		可以在<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Window_onMouseDown.html">Window.onMouseDown</a>等上使用。<br />
 	</p>
 	
 	<li>支持后台图像读取功能。</li>
 	<p>
 		因为现在的同步读入有在一边更新图像一边读入的时候，显示在读入时停止这样的问题而添加。<br />
 		通过非同步读取，不停止显示的更新，就可以读取下一个图像。
-		异步读取通过 <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Bitmap_loadAsync.html">Bitmap.loadAsync</a> 进行。<br />
+		异步读取通过 <a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Bitmap_loadAsync.html">Bitmap.loadAsync</a> 进行。<br />
 	</p>
 	
 	<li>TJS2类继承现在可以用native（C++）编写。</li>
@@ -410,46 +410,46 @@ Plugin公有函数的TVPCreateTextStreamForReadByEncoding的第三个参数可�
 	<li>添加drawGlyph，使外字的绘制变得容易。</li>
 	<p>
 		添加可在字符串中嵌入任意字形，以便于绘制。<br />
-		可以用<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_drawGlyph.html">Layer.drawGlyph</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_ImageFunction_drawGlyph.html">ImageFunction.drawGlyph</a> 进行绘制。<br />
+		可以用<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Layer_drawGlyph.html">Layer.drawGlyph</a> / 
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_ImageFunction_drawGlyph.html">ImageFunction.drawGlyph</a> 进行绘制。<br />
 	</p>
 
 	<li>增加了PNG/JPEG/TLG存储功能。</li>
 	<p>
 		因为能读入，和其对应地保存功能也添加。<br />
 		在本体能进行BMP/PNG/JPEG/TLG的读写会更方便。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Layer_saveLayerImage.html">Layer.saveLayerImage</a> / <a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Bitmap_save.html">Bitmap.save</a> 的type参数可以指定Bitmap以外的形式。<br />
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Layer_saveLayerImage.html">Layer.saveLayerImage</a> / <a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Bitmap_save.html">Bitmap.save</a> 的type参数可以指定Bitmap以外的形式。<br />
 	</p>
 	
 	<li>添加FreeType字符绘制。</li>
 	<p>
 		虽然吉里吉里2只有基于GDI的文字绘制，但吉里吉里Z中也支持基于FreeType的绘制。<br />
-		可以在<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_rasterizer.html">Font.rasterizer</a> 中指定。<br />
+		可以在<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Font_rasterizer.html">Font.rasterizer</a> 中指定。<br />
 		可以预期比GDI更漂亮的文字描绘。<br />
 	</p>
 	<li>添加日志处理程序。</li>
 	<p>
 		添加日志处理程序以使日志可在脚本中处理。<br />
-		可由<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Debug_addLoggingHandler.html">Debug.addLoggingHandler</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Debug_removeLoggingHandler.html">removeLoggingHandler</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Debug_getLastLog.html">getLastLog</a> 处理。
+		可由<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Debug_addLoggingHandler.html">Debug.addLoggingHandler</a> / 
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Debug_removeLoggingHandler.html">removeLoggingHandler</a> / 
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Debug_getLastLog.html">getLastLog</a> 处理。
 	</p>
 	
 
 	<li>添加字符串实际绘制范围获取方法。</li>
 	<p>
 		<!-- フォントによって綺麗に指定位置へ描画することが困難な場合もあるため文字列の実描画範囲取得メソッドを追加した。<br />
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_getGlyphDrawRect.html">Font.getGlyphDrawRect</a> で取得可能。<br /> -->
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Font_getGlyphDrawRect.html">Font.getGlyphDrawRect</a> で取得可能。<br /> -->
 		根据字体在指定位置漂亮地绘制也存在困难的情况，因此添加了字符串的实际绘制范围取得方法。<br />
-		可通过F<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_getGlyphDrawRect.html">Font.getGlyphDrawRect</a> 获得。<br />
+		可通过F<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Font_getGlyphDrawRect.html">Font.getGlyphDrawRect</a> 获得。<br />
 	</p>
 
 	<li>删除线和下划线的实装。</li>
 	<p>
 		实装了吉里吉里2中未实装的删除线和下划线。<br />
 		由此可以绘制包含删除线和下划线的文字。<br />
-		可以在<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_strikeout.html">Font.strikeout</a> / 
-		<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/f_Font_underline.html">underline</a> 中指定。<br />
+		可以在<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Font_strikeout.html">Font.strikeout</a> / 
+		<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/f_Font_underline.html">underline</a> 中指定。<br />
 	</p>
 
 	<li>Opus音乐格式支持。</li>
@@ -472,7 +472,7 @@ Plugin公有函数的TVPCreateTextStreamForReadByEncoding的第三个参数可�
 	<p>
 		由于删除了显示内容的异常发生时使用的Pad，因此可以指定任意的编辑器作为其替代。<br />
 		可由-exceptionexe和-exceptionarg指定。<br />
-		有关详细信息，请参见<a href="http://krkrz.github.io/docs/kirikiriz/j/contents/CommandLine.html">命令行选项</a>。<br />
+		有关详细信息，请参见<a href="http://kkimoritama.github.io/krkrz-cn/docs/kirikiriz/j/contents/CommandLine.html">命令行选项</a>。<br />
 
 	</p>
 </ol>

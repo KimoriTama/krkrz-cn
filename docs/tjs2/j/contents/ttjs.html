@@ -14,41 +14,43 @@
 	<link href="index.html" target="_top" rel="Start" title="首页" />
 </head>
 <body>
-<h1><a id="id379" name="id379">tTJS とは</a>
+<h1><a id="id379" name="id379">tTJS 是什么</a>
 </h1><div class="para"><div>
-　TJS2 スクリプトエンジンのクラスです。このクラスのオブジェクトを通して TJS2 を操作することができます。<br />
+	　TJS2脚本引擎类。您可以通过该类中的对象来处理TJS2。<br />
 </div></div>
 <h1><a id="id380" name="id380">コンストラクタ</a>
 </h1><div class="para"><div>
-　tTJS のコンストラクタに引数はありません。<br />
-　tTJS のオブジェクトは自動変数として作成できません。かならず new 演算子を用いて作成する必要があります。<br />
-　作成直後の 参照カウンタは 1 になっています。これはそのまま Release メソッドを呼べば tTJS のオブジェクトが解放されると言うことです。<br />
+　tTJS构造函数没有参数。<br />
+　不能将tTJS对象创建为自动变量。必须使用new运算符创建。<br />
+　刚创建的引用计数器为1。这意味着只要调用Release方法，就可以释放tTJS对象。<br />
 </div></div>
-<h1><a id="id381" name="id381">デストラクタ</a>
+
+<h1><a id="id381" name="id381">析构</a>
 </h1><div class="para"><div>
-　tTJS のデストラクタは保護部にあり、アクセスできません。<br />
-　tTJS のオブジェクトを解放するには Release メソッドを使ってください。<br />
-　また、tTJS のオブジェクトを解放する前には Shutdown メソッドを呼ぶことが推奨されます。<br />
+	　tTJS析构函数位于保护部分，无法访问。<br />
+	　使用Release方法释放tTJS对象。<br />
+	　此外，建议在释放tTJS对象之前调用Shutdown方法。<br />
 </div></div>
 
 <h1><a id="id382" name="id382">AddRef</a>
 </h1><div class="para"><div>
 void tTJS::AddRef()<br />
 <br />
-　TJS2 スクリプトエンジンの参照カウンタをインクリメントします。</div></div>
+　递增TJS2脚本引擎引用计数器。</div></div>
 <h1><a id="id383" name="id383">Release</a>
 </h1><div class="para"><div>
 void tTJS::Release()<br />
 <br />
-　TJS2 スクリプトエンジンの参照カウンタをデクリメントします。<br />
-　参照カウンタが 0 になれば tTJS オブジェクトは解放されます。</div></div>
+　递减TJS2脚本引擎引用计数器。<br />
+　如果引用计数器为0，则释放tTJS对象。</div></div>
 <h1><a id="id384" name="id384">Shutdown</a>
 </h1><div class="para"><div>
 void tTJS::Shutdown()<br />
 <br />
-　スクリプトエンジンのシャットダウンを行います。<br />
+
+　关闭脚本引擎。<br />
 <br />
-　TJS2 スクリプトエンジンを解放するとき、Release メソッドの前にこのメソッドを呼ぶことを推奨します。<br />
+　释放TJS2脚本引擎时，建议在Release方法之前调用此方法。<br />
 </div></div>
 
 <h1><a id="id385" name="id385">GetGlobal</a>

@@ -9,9 +9,9 @@
 	<meta name="author" content="W.Dee" />
 	<meta http-equiv="Content-Style-Type" content="text/css" />
 	<meta http-equiv="Content-Script-Type" content="text/javascript" />
-	<link href="browser.css" type="text/css" rel="stylesheet" title="åéåéç¸å³æ ååèæ ·å¼" />
+	<link href="browser.css" type="text/css" rel="stylesheet" title="吉里吉里相关标准参考样式" />
 	<link href="mailto:dee@kikyou.info" rev="Made" />
-	<link href="index.html" target="_top" rel="Start" title="é¦é¡µ" />
+	<link href="index.html" target="_top" rel="Start" title="首页" />
 </head>
 <body>
 <h1><a id="id3" name="id3">Array 类</a>
@@ -122,7 +122,7 @@
 <code class="bq">语法&nbsp;:&nbsp;sort(&lt;排序顺序='+'&gt;,&nbsp;&lt;是否进行稳定排序=false&gt;)</code>
 <br />
 
-　排序顺序需要时以下的字符串中的一个。升序就是将数组对象从小到大重新排列，降序则相反。省略排序顺序参数则将默认按照 &quot;+&quot; 排序。<br />
+　排序顺序需要以下的字符串中的一个。升序就是将数组对象从小到大重新排列，降序则相反。省略排序顺序参数则将默认按照 &quot;+&quot; 排序。<br />
 
 <br />
 <code class="bq">&quot;+&quot;&nbsp;&nbsp;:&nbsp;升序排列&nbsp;(利用普通的&nbsp;&lt;&nbsp;运算符进行比较)<br />
@@ -134,7 +134,7 @@
 </code>
 <br />
 
-　可以指定函数代替字符串作为排序顺序的依据。函数需要拥有两个参数，并在当第一个参数应排在第二个参数之前时返回 true 。(请注意，TJS 的 sort 与 JavaScript 的 sort 方法，作为排序顺序传递的函数所需要的参数以及返回值不同 )。<br />
+　可以指定函数代替字符串作为排序顺序的依据。函数需要拥有两个参数，并且在指定函数时、若第一个参数应排在第二个参数之前，则返回 true 。(请注意，TJS 的 sort 与 JavaScript 的 sort 方法，作为排序顺序传递的函数所需要的参数以及返回值不同 )。<br />
 <br />
 　第二个参数将需要指定是否进行稳定排序。如果省略此参数则将默认为 false ，也就是进行不稳定排序。所谓的“稳定排序”，就是指相等的数组元素的顺序在排序后也相同的排序方法。对于不稳定排序，则不保证相等的元素在排序后和原先的顺序相同。<br />
 
